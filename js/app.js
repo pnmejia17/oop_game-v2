@@ -25,3 +25,11 @@
 //     logPhrase(game.getRandomPhrase());
 //     logPhrase(game.getRandomPhrase());
 //     logPhrase(game.getRandomPhrase());
+
+// const game = new Game();
+// game.getRandomPhrase().addPhraseToDisplay();
+
+// const game = new Game();
+// const randomPhrase = game.getRandomPhrase();
+// const phrase = new Phrase(randomPhrase.phrase);
+// phrase.addPhraseToDisplay();
