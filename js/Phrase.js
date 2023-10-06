@@ -14,7 +14,7 @@ class Phrase {
         ul.innerHTML = ``;
         for (let i = 0; i < this.phrase.length; i++){
             if (this.phrase[i] === ' '){
-                const html = `<li> class="hide space"${this.phrase[i]}</li>`
+                const html = `<li class="hide space">${this.phrase[i]}</li>`
                 ul.innerHTML += html;
             } else {
                 const html = `<li class = 'hide letter ${this.phrase[i]}'> ${this.phrase[i]}</li>`;

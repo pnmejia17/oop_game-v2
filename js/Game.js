@@ -14,7 +14,12 @@ class Game {
             new Phrase(`Life's a piece of cake`)];
         this.activePhrase = null;
     }
-    startGame(){}
+    startGame(){
+        let startScreen = document.getElementById('overlay')
+        startScreen.style.display = 'none'
+        this.activePhrase = this.getRandomPhrase()
+        this.activePhrase.addPhraseToDisplay()
+    }
     getRandomPhrase(){
         return (this.phrases[(Math.floor(Math.random() * this.phrases.length))]);
     }
