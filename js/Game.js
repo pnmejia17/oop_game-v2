@@ -15,10 +15,12 @@ class Game {
         this.activePhrase = null;
     }
     startGame(){}
-    getRandomPhrase(){}
+    getRandomPhrase(){
+        return (this.phrases[(Math.floor(Math.random() * this.phrases.length))]);
+    }
     handleInteraction(){}
     removeLife(){}
     checkForWin(){}
     gameOver(){}
-    
+
 }
