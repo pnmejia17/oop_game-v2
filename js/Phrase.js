@@ -23,6 +23,20 @@ class Phrase {
         }
         return ul;
     }
-    checkLetter(){}
-    showMatchedLetter(){}
+    checkLetter(letter){
+        if (this.phrase.includes(letter)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    showMatchedLetter(letter){
+        const matchedLetters = document.querySelectorAll(`#phrase li.${letter}`);
+        if (this.checkLetter(letter)) {
+            matchedLetters.forEach(letter => {
+                letter.classList.remove('hide')
+                letter.classList.add('show')
+            })
+        }
+    }
 }
