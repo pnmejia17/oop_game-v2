@@ -10,6 +10,8 @@ class Phrase {
         this.id = 'phrase';
         this.class = 'section';
 }
+
+// maps the phrase unto the boxes
     addPhraseToDisplay(){
         ul.innerHTML = ``;
         for (let i = 0; i < this.phrase.length; i++){
@@ -23,6 +25,8 @@ class Phrase {
         }
         return ul;
     }
+
+// checks in the letter is included in the phrase
     checkLetter(letter){
         if (this.phrase.includes(letter)){
             return true;
@@ -30,6 +34,8 @@ class Phrase {
             return false;
         }
     }
+
+// uses the check letter method to reveal matched letter by changing class  
     showMatchedLetter(letter){
         const matchedLetters = document.querySelectorAll(`#phrase li.${letter}`);
         if (this.checkLetter(letter)) {
