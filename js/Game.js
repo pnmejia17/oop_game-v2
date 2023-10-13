@@ -43,7 +43,7 @@ class Game {
             
             if (this.checkForWin()) {
                 let gameWon = true;
-                this.gameOver()
+                this.gameOver(gameWon)
             }
         } else {
             letterButton.classList.add('wrong')
@@ -61,8 +61,9 @@ class Game {
             life.src = "images/lostHeart.png"
         } 
         this.missed += 1
-        if (this.missed > 5){
-            this.gameOver()
+        if (this.missed >= 5){
+            let gameWon = false
+            this.gameOver(gameWon)
         }
     }
     
@@ -87,6 +88,8 @@ class Game {
 // takes a boolean and displays game over message accordingly
     gameOver(gameWon){
         startScreen.style.display='block';
+
+        console.log(gameWon)
 
         if (gameWon){
             gameOverMessage.innerHTML = "Congratulations! <br>You've correctly guessed the phrase"
@@ -116,6 +119,7 @@ class Game {
             heart.src = 'images/liveHeart.png';
         })
 
+        startScreen.className = 'start'
         this.activePhrase = this.getRandomPhrase()
         this.activePhrase.addPhraseToDisplay()
     }
